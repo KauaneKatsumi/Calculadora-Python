@@ -1,6 +1,6 @@
-# Teste Técnico Itaú 
+# Teste Técnico 
 
-##Case para Engenharia de Software Jr
+##Case para Engenharia de Software 
 
 1. A atividade do Case foi realizada com a linguagem de programação Python; 
 
