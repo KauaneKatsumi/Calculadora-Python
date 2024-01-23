@@ -7,7 +7,7 @@ def operacao_e_resultado(operacao, valorA, valorB, resultado):
     return f'{valorA} {operacao} {valorB} = {resultado}'
 
 def processa_operacao(operacao, valorA, valorB):
-    resultado = eval (f'{valorA} {operacao} {valorB}')
+    resultado = int (eval(f'{valorA} {operacao} {valorB}'))
     return resultado, operacao_e_resultado(operacao, valorA, valorB, resultado)
 
 #Impressão de lista de operaçõoes a ser processada após cada calculo realizado
@@ -17,41 +17,34 @@ operacoes_realizadas = []
 pilha_resultados = []
 
 # Execução das operações
-resultado_soma, operacao_soma = processa_operacao('+', 2, 3)
-operacoes_realizadas.append(operacao_soma)
-pilha_resultados.append(resultado_soma)
+resultado, operacao = processa_operacao('+', 2, 3)
+operacoes_realizadas.append(operacao)
+pilha_resultados.append(resultado)
 
-resultado_subtracao, operacao_subtracao = processa_operacao('-', 14, 8)
-operacoes_realizadas.append(operacao_subtracao)
-pilha_resultados.append(resultado_subtracao)
+resultado, operacao = processa_operacao('-', 14, 8)
+operacoes_realizadas.append(operacao)
+pilha_resultados.append(resultado)
 
-resultado_multiplicacao, operacao_multiplicacao = processa_operacao('*', 5, 6)
-operacoes_realizadas.append(operacao_multiplicacao)
-pilha_resultados.append(resultado_multiplicacao)
+resultado, operacao = processa_operacao('*', 5, 6)
+operacoes_realizadas.append(operacao)
+pilha_resultados.append(resultado)
 
-resultado_soma1, operacao_soma1 = processa_operacao('+', 2147483647, 2)
-operacoes_realizadas.append(operacao_soma1)
-pilha_resultados.append(resultado_soma1)
+resultado, operacao = processa_operacao('+', 2147483647, 2)
+operacoes_realizadas.append(operacao)
+pilha_resultados.append(resultado)
 
 # Implementação da funcionalidade de divisão
-resultado_divisao, operacao_divisao = processa_operacao('/', 18, 3)
-operacoes_realizadas.append(operacao_divisao)
-pilha_resultados.append(resultado_divisao)
+resultado, operacao = processa_operacao('/', 18, 3)
+operacoes_realizadas.append(operacao)
+pilha_resultados.append(resultado)
 
-# Exibição dos resultados
-print('\nResultados:')
-print(f'Resultado Soma: {resultado_soma}')
-print(f'Resultado Subtração: {resultado_subtracao}')
-print(f'Resultado Multiplicação: {resultado_multiplicacao}')
-print(f'Resultado Soma1: {resultado_soma1}')
-print(f'Resultado Divisão: {resultado_divisao}')
-
-# Exibição das operações realizadas *em forma de lista
+# Exibição das operações realizadas *lista Python
 print('\nOperações realizadas:')
 for operacao_realizada in operacoes_realizadas:
     print(operacao_realizada)
 
-# Exibição pilha (stack) de resultados - lista Python
+# Exibição pilha (stack) de resultados 
 print('\nPilha de Resultados:')
 for resultado in pilha_resultados:
     print(resultado)
+
